@@ -95,6 +95,10 @@ header li {
 	margin: 0 10px;
 }
 
+select {
+	display: none;
+}
+
 /* MAIN SECTION Styling*/
 button {
 	position: absolute;
@@ -204,7 +208,19 @@ section div {
 		grid-template-rows: 1fr 1fr 1fr;
 	}
 	header img {
+		width: 30%;
+		padding: 0;
+	}
+	header ul {
+		display: none;;
+	}
+	select {
+		display: block;
 		width: 100%;
+	}
+	header {
+		display: block;
+		text-align: center;
 	}
 }
 
