@@ -47,7 +47,6 @@ nav a:hover, .currency:hover {
 
 /* Hiding drop down box for now - need to figure out how to make it work*/
 #currency {
-	position: absolute;
 	display: none;
 }
 
@@ -100,65 +99,64 @@ select {
 }
 
 /* MAIN SECTION Styling*/
+.mainImageHeader, .lowerImageHeader  {
+	display: flex;
+	flex-direction: column;
+	top: 40%;
+	color: #ffffff;
+	font-size: 2em;
+	width: 100%;
+}
+
+.mainImageHeader h4, .mainImageHeader h1, .lowerImageHeader h1 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	align-self: center;
+}
+
+.mainImage img, .lowerImage img  {
+	height: 600px;
+	width: 100%;	
+}
+
 button {
-	position: absolute;
-	top: 65%;
-	left: 45%;
 	color: #ffffff;
 	background-color: transparent;
 	padding: 10px;
 	border: 3px solid #ffffff;
-	font-size: 1.5em;
+	font-size: 1em;
+	align-self: center;
+	margin-top: 5%;
+	text-transform: uppercase;
 }
 
 button:hover {
 	border: 6px solid #ffffff;
 	font-weight: bold;
+	background-color: #152282;
+	border: 3px solid #152282;
 }
 
-.mainImageHeader {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	left: 25%;
-	position: absolute;
-	top: 40%;
-	color: #ffffff;
-	font-size: 2em;
-}
-
-.mainImageHeader h4, .mainImageHeader h1 {
-	margin-top: 0;
-	margin-bottom: 10px;
-}
-
-.mainImage img {
-	height: 500px;
-	width: 100%;	
-}
-
+/*Floating blue boxes - styling and positioning*/
 .floatingBoxes {
-	position: absolute;
-	width: 100%;
-	top: 80%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+	font-size: 0.7em;
+	margin-top: 5%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 20px;
 	padding-left: 100px;
 	padding-right: 100px;
 }
 
 .floatingBoxes div {
-	width: 70%;
-	height: 200px;
 	justify-content: space-between;
 	text-align: center;
 	background-size: 100% 100%;
 }
 
 .box1, .box2, .box3 {
-	margin: 0 20px;
+	height: 200px;
+	width: 100%;
 }
 
 .box1 {
@@ -178,18 +176,18 @@ button:hover {
 }
 
 /* GALLERY SECTION Styling*/
-section {
-	position: absolute;
-	top: 120%;
+.section1 {
+	margin-top: 10%;
+	top: 110%;
 	width: 100%;
 }
 
-section h3 {
+.section1 h3 {
 	text-align: center;
 	width: 100%;
 }
 
-section div {
+.section1 div {
 	align-content: center;
 	text-align: center;
 }
@@ -199,6 +197,27 @@ section div {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	grid-gap: 2em;
+}
+
+/*SECTION 2*/
+
+
+/*Not happy about this... but it is what it is*/
+.lowerImageHeader, .section2, .section1, .footer, .mainImageHeader, .lowerImageHeader, #currency {
+	position: absolute;
+}
+
+.lowerImage img {
+	margin-top: 10%;
+	height: 800px;
+}
+
+/*FOOTER*/
+.footer {
+	bottom: 0;
+	background-color: #4e5157;
+	color: #98999c;
+	width: 100%;
 }
 
 /*Responsivity*/
@@ -222,20 +241,51 @@ section div {
 		display: block;
 		text-align: center;
 	}
+	.floatingBoxes {
+		grid-template-columns: 1fr 1fr;
+	}
+	.box3 {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 950px) {
+	nav {
+		flex-wrap: wrap;
+		justify-content: center;	
+	}
 	.gallery {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
 	}
+	.mainImage img {
+		height: 400px;
+	}
+	.mainImageHeader {
+		font-size: 1.7em;
+	}
+	.box1 h2 {
+		margin-top: 10%;
+	}
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
+	body {
+		font-size: 0.8em;
+	}
+	nav ul {
+		display: none;
+	}
 	.gallery {
 		display: block;
 	}
-	section div {
+	.section1 div {
 		padding-top: 40px;
+	}
+	.floatingBoxes {
+		grid-template-columns: 1fr;
+	}
+	.box2 {
+		display: none;
 	}
 }
